@@ -1,0 +1,53 @@
+.card{
+    color: white;
+    position: relative;
+    bottom: 212px;
+    height: 36vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.castcard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+.castcard:hover{
+    transform: scale(1.2);
+}
+.castimage{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ref{
+    width: 60%;
+    border-radius: 337px 367px 451px 405px;
+}
+.castname{
+    font-size: 19px;
+    padding: 13px;
+}
+.top{
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: -195px;
+    left: 47px;
+    transform: scale(1);
+    transition: transform 0.2s step-end;
+}
+.top:hover{
+    color: red;
+    transform: scale(1.2);
+}
+
