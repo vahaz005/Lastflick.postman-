@@ -7,8 +7,11 @@ import { AppProvider } from './components/Appcontext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AppProvider>
+      <App/>
+    </AppProvider>
  
-    <App/>
+   
     
 
   </React.StrictMode>,

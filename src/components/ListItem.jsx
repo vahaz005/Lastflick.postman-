@@ -3,8 +3,15 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import './listitem.css'
 import { Link } from 'react-router-dom';
 
-function ListItem({title , url , overview , date , rating , id}) {
+function ListItem({title , url , overview , date , rating , id , listref}) {
   
+
+  
+ const [ishovered , setIshovered] =  useState(false ) ;
+ useEffect(()=>{
+  console.log(ishovered) ;
+
+ } , [ishovered])
  
   const [isLoading, setIsLoading]  = useState(true) ;
   useEffect(()=>{
@@ -24,7 +31,10 @@ function ListItem({title , url , overview , date , rating , id}) {
     </SkeletonTheme>
 </div>
 :
-<Link  className='listitem' to={`/movie/${id}`} style={{textDecoration:"none", color:"white"}}>
+<>
+
+<Link className='listitem' to={`/movie/${title}`} style={{textDecoration:"none", color:"white"}}>
+  {/* <button className={ishovered?"addlist__hovered" : "addlist"}>{listref}</button> */}
    
         <div className='image'>
             <img src={url} alt="" />
@@ -34,15 +44,15 @@ function ListItem({title , url , overview , date , rating , id}) {
         <div className="title1">{title}</div>
         <div className="card__runtime">
                         {date}
-                        <span className="card__rating">{rating}<ion-icon name="star"></ion-icon></span>
+                        <span className="card__rating">{rating}</span>
                         
                     </div>
-                <div className="content">{ overview}</div>
+                <div className="content"> {overview && overview}</div>
         </div>
         
         </Link>
                 
-      
+      </>
     
     
   )
